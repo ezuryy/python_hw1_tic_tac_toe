@@ -9,7 +9,7 @@ on:
       - '*'
 jobs:
   run_tests:
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest]
     steps:
       # Чекаутим код
       - uses: actions/checkout@master
@@ -22,7 +22,7 @@ jobs:
         # Устанавливаем зависимости
         run: pip install numpy, coverage, flake8
       - name: Run tests
-      - run: coverage run test.py
+        run: coverage run test.py
       - name: Tests report
         run: coverage report
       - name: Run pylint
