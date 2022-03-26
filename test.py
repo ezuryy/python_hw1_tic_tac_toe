@@ -101,10 +101,10 @@ class MyTestCase(unittest.TestCase):
 
         for i in range(9):
             game = TicTacToe()
-            result = game.make_move(i, 1)  # Занимаем ячейку
+            result = game.make_move(str(i), 1)  # Занимаем ячейку
             self.assertEqual(result, True)
             self.assertEqual(game.get_game_state(), -1)
-            result = game.make_move(i, 2)  # Ячейка уже занята
+            result = game.make_move(str(i), 2)  # Ячейка уже занята
             self.assertEqual(result, False)
             self.assertEqual(game.get_game_state(), -1)
 
